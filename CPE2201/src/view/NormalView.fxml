@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<!-- Normal View Root Pane -->
+<BorderPane fx:id="normalViewRootPane" prefHeight="700.0" prefWidth="1000.0" styleClass="root-pane" stylesheets="@css/base.css, @css/themes/light-theme.css, @css/components/common-components.css, @css/components/table-styles.css, @css/components/queue-styles.css, @css/components/lyrics-styles.css, @css/components/player-controls.css, @css/components/scrollbar-styles.css, @css/components/normal-view.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.NormalViewController">
+    <!-- Center: Main content area with Library and Lyrics/Queue -->
+    <center>
+        <SplitPane dividerPositions="0.35" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <items>
+                <!-- Left Side: Song Library, Search, and Filter Controls -->
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                    <children>
+                        <VBox spacing="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                            <children>
+                                <!-- Library Search Field -->
+                                <Label styleClass="section-label" text="Search Library" />
+                                <TextField fx:id="searchTextField" promptText="Enter title or artist..." />
+                                <!-- Genre Filter Dropdown -->
+                                <Label styleClass="section-label" text="Filter by Genre" />
+                                <ComboBox fx:id="genreFilterComboBox" maxWidth="1.7976931348623157E308" promptText="All Genres" />
+                                <!-- Song Library Table -->
+                                <Label styleClass="section-label" text="Song Library" />
+                                <TableView fx:id="songTableView" VBox.vgrow="ALWAYS">
+                                    <columns>
+                                        <TableColumn fx:id="titleColumn" prefWidth="150.0" text="Title" />
+                                        <TableColumn fx:id="artistColumn" prefWidth="120.0" text="Artist" />
+                                    </columns>
+                                    <columnResizePolicy>
+                                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                    </columnResizePolicy>
+                                </TableView>
+                                <!-- Add to Queue Button -->
+                                <Button fx:id="addToQueueButton" mnemonicParsing="false" onAction="#handleAddToQueue" text="Add Selected to Queue" maxWidth="1.7976931348623157E308" />
+                            </children>
+                        </VBox>
+                    </children>
+                </AnchorPane>
+
+                <!-- Right Side: Playback Queue and Lyrics Display Area -->
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                    <children>
+                        <VBox spacing="5.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                            <children>
+                                <!-- Playback Queue Display -->
+                                <TitledPane fx:id="queueTitledPane" animated="false" collapsible="true" expanded="true" styleClass="queue-titled-pane">
+                                    <graphic>
+                                        <Label styleClass="queue-header-label" text="Up Next" />
+                                    </graphic>
+                                    <content>
+                                        <ListView fx:id="queueListView" prefHeight="80.0" />
+                                    </content>
+                                    <VBox.margin>
+                                        <Insets bottom="2.0" />
+                                    </VBox.margin>
+                                </TitledPane>
+                                <!-- Lyrics Display Container -->
+                                <VBox fx:id="lyricsContainer" alignment="CENTER" spacing="8.0" styleClass="lyrics-container" VBox.vgrow="ALWAYS">
+                                    <padding>
+                                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                    </padding>
+                                    <children>
+                                        <Label fx:id="previousLyricLabel" styleClass="other-lyric" textAlignment="CENTER" wrapText="true" />
+                                        <Label fx:id="currentLyricLabel" styleClass="current-lyric" textAlignment="CENTER" wrapText="true">
+                                            <VBox.margin>
+                                                <Insets bottom="5.0" top="5.0" />
+                                            </VBox.margin>
+                                        </Label>
+                                        <Label fx:id="next1LyricLabel" styleClass="other-lyric" textAlignment="CENTER" wrapText="true" />
+                                        <Label fx:id="next2LyricLabel" styleClass="other-lyric" textAlignment="CENTER" wrapText="true" />
+                                    </children>
+                                </VBox>
+                            </children>
+                        </VBox>
+                    </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+    </center>
+    <!-- Bottom: Playback Controls and Information Bar -->
+    <bottom>
+        <VBox spacing="5.0" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+            </padding>
+            <children>
+                <!-- Now Playing Information -->
+                <HBox alignment="CENTER_LEFT" spacing="10.0" styleClass="now-playing-bar">
+                    <padding>
+                        <Insets left="10.0" right="10.0" top="5.0" bottom="5.0" />
+                    </padding>
+                    <children>
+                        <Label styleClass="now-playing-label-title" text="Now Playing: " />
+                        <Label fx:id="nowPlayingTitleLabel" styleClass="now-playing-label-info" text="-" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+                        <Label fx:id="nowPlayingArtistLabel" styleClass="now-playing-label-info" text="-" minWidth="-Infinity"/>
+                    </children>
+                </HBox>
+                <!-- Playback Progress Slider and Time Labels -->
+                <HBox alignment="CENTER" spacing="10.0">
+                    <padding>
+                        <Insets left="10.0" right="10.0" />
+                    </padding>
+                    <children>
+                        <Label fx:id="currentTimeLabel" minWidth="-Infinity" styleClass="time-label" text="0:00" />
+                        <Slider fx:id="playbackSlider" HBox.hgrow="ALWAYS" />
+                        <Label fx:id="totalDurationLabel" minWidth="-Infinity" styleClass="time-label" text="0:00" />
+                    </children>
+                </HBox>
+                <!-- Main Control Buttons Bar -->
+                <HBox alignment="CENTER" spacing="15.0" styleClass="control-button-bar">
+                    <children>
+                        <!-- Application Controls -->
+                        <Button fx:id="fullscreenToggleButton" mnemonicParsing="false" onAction="#handleFullscreenToggle" text="Toggle Fullscreen" />
+                        <Button fx:id="themeButton" mnemonicParsing="false" onAction="#handleThemeToggle" text="Dark Mode" />
+
+                        <Region HBox.hgrow="ALWAYS" />
+
+                        <!-- Playback Controls -->
+                        <Button fx:id="playPauseButton" mnemonicParsing="false" onAction="#handlePlayPause" prefWidth="80.0" text="Play" />
+                        <Button fx:id="skipButton" mnemonicParsing="false" onAction="#handleSkip" text="Skip" />
+                        <Button fx:id="stopButton" mnemonicParsing="false" onAction="#handleStop" text="Stop All" />
+                        
+                        <Region HBox.hgrow="ALWAYS"/>
+
+                        <Region prefWidth="30.0" />
+
+                        <!-- Lyric Offset Controls -->
+                        <Button fx:id="increaseOffsetButton" mnemonicParsing="false" onAction="#handleIncreaseOffset" styleClass="lyric-offset-button" text="+" />
+                        <Label fx:id="lyricOffsetLabel" styleClass="lyric-offset-label" text="0 ms">
+                            <HBox.margin>
+                                <Insets left="5.0" right="5.0" />
+                            </HBox.margin>
+                        </Label>
+                        <Button fx:id="decreaseOffsetButton" mnemonicParsing="false" onAction="#handleDecreaseOffset" styleClass="lyric-offset-button" text="-" />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </bottom>
+</BorderPane>

@@ -1,0 +1,72 @@
+## emu8086
+# Compiled output
+*.exe
+*.bin
+*.obj
+*.o
+
+# Debug & listing
+*.lst
+*.map
+*.tmp
+*.bak
+
+# Logs and out files
+*.log
+*.out
+
+# IDE or OS specific
+.DS_Store
+Thumbs.db
+
+# Build folders
+build/
+output/
+dist/
+
+## Proteus 8.11
+# Proteus backup and autosave files
+*.PDSBAK
+*.BAK
+*.TMP
+
+# Proteus autosave and recovery directories
+*/Backup/
+*/Autosave/
+*/Temp/
+*.log
+
+# Simulation output files
+*.hex
+*.elf
+*.obj
+*.cof
+
+# Compiled object and dependency files
+*.o
+*.d
+*.exe
+
+# External or generated firmware directories
+fehproteusfirmware/
+
+# IDE and editor metadata
+.vscode/
+.idea/
+*.workspace
+*.layout
+
+## KiCad 9.0.5
+# KiCad backups
+*-backups/
+*.bak
+*.bck
+*.kicad_sch-bak
+*.kicad_pcb-bak
+
+# Generated files
+*.erc
+*.net
+*.xml
+*-cache.lib
+*-rescue.lib

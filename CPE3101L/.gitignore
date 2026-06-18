@@ -1,0 +1,53 @@
+# Quartus build artifacts
+db/
+incremental_db/
+output_files/
+greybox_tmp/
+qdb/
+cdb/
+simulation/
+*_sim/
+modelsim/
+vsim/
+timing/
+reports/
+
+# Generated files
+*.rpt
+*.sta.rpt
+*.htm
+*.html
+*.log
+*.sof
+*.pof
+*.jic
+*.rbf
+*.qws
+*.qdf
+*.qmsg
+*.smsg
+*.jdi
+*.bak
+
+# IDE/OS clutter
+.settings/
+.project
+.classpath
+.idea/
+*.iml
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Keep core project and sources
+!*.qpf
+!*.qsf
+!*.qip
+!*.sip
+!*.qsys
+!*.tcl
+!*.v
+!*.sv
+!*.vhd
+!*.bdf
+!*.sdc

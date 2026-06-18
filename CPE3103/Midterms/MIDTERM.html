@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<body>
+ <h2>Midterm Exam</h2> 
+<p>ID Number: 23100968
+<br>Group No.: 1<p><p>
+<b>QUESTION 1:<br></b>
+Given the signal x(t) <br>
+<img src="./q1.png">
+<br>
+found in the PNG-file named q1.png, edit the C-function 
+with the prototype
+
+<br><br><code><pre>
+	  double x(double t).
+</pre></code><br>
+
+found in signals.c so that it defines x(t) as a piecewise function. Note that 
+your definition must make use of inclusive relational operators e.g. <= or >= 
+where it applies.
+</p>
+</p>
+<p>
+<b>QUESTION 2:</b><br>
+Using the signal x(t) from QUESTION 1, find the piecewise definition of 
+<br><br><code><pre>
+	y(t) = x(-t+2)
+</pre></code><br><br>
+Edit the C-function with the prototype
+<br><br><code><pre>
+	double y(double t)
+</pre></code><br>
+found in signals.c so that it defines the y(t) after the independent variable
+manipulation of x(t).</p>
+<p>
+<b>QUESTION 3:</b><br>
+Using the signal y(t) from QUESTION 2, define y(t) using shifted and scaled 
+step signals u(t) and tu(t). Edit the C-function with the prototype
+
+<br><br><code><pre>
+	double z(double t)
+</pre></code><br>
+
+for your definition. Note that the unit step signal u(t) has been provided in
+signals.c. As a hint, the mathematical expression u(t+1) + tu(t-2)  would be
+defined as
+<br><br><code><pre>
+    u(t+1) + t*u(t-2).
+</pre></code><br>
+</p>
+<p>
+<b>QUESTION 4:</b><br>
+Given the relationship
+<br><br><code><pre>
+	           _
+	          /  t
+	x(t)  =   |        r(T) dT
+	         _/   - oo
+</pre><br><br></code>
+where x(t) is the signal from QUESTION 1. Define r(t) as a piecewise function
+by editing the C-function with the function prototype
+<br><br><code><pre>
+	double r(double t)
+</pre></code><br><br>
+found in signals.c. Note that for infinity use the given identifier Inf.
+</p>
+</body>
+</html>

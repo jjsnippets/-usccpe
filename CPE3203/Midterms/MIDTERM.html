@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<body>
+ <h2>Midterm Exam</h2> 
+<p>ID Number: 23100968
+<br>Group No.: 2<p><p>
+<b>QUESTION 1:<br></b>
+Given the signal x(t) <br>
+<img src="./q1.png">
+<br>
+edit the C-function 
+with the prototype
+
+<br><br><code><pre>
+	  double x(double t).
+</pre></code><br>
+
+which can be found in xt.c so that it defines x(t) as a piecewise function. Note that 
+your definition must make use of inclusive relational operators e.g. <= or >= 
+where it applies.
+</p>
+</p>
+<p>
+<b>QUESTION 2:</b><br>
+Using the signal x(t) from QUESTION 1, find its Fourier Transform
+<br><br><code><pre>
+               _
+              /   + oo        - jwt
+   X(jw)  =   |        x(t) e       dt
+             _/   - oo
+</pre></code><br><br>
+Edit the C-function with the prototype
+<br><br><code><pre>
+   double complex Xjw(double w)
+</pre></code><br>
+found in Xjw.c so that it defines the X(jw) as a mathematical operation in C-language.
+For example, the mathematical expression
+<br><br><code><pre>
+             - (1 + jw)t
+   sin(2t) e      
+</pre></code><br><br>
+would be written as
+<br><br><code><pre>
+   sin(2*t)*exp(-(1 + I*w)*t);
+</pre></code><br>
+where I is the imaginary number i or j. Complex numbers can be defined as real + I*imaginary so that -2+j3 can be assigned to a
+complex variable as
+<br><br><code><pre>
+   double complex imaginaryNumber = -2 + I*3;
+</pre></code><br>
+</p>
+<p>
+<b>QUESTION 3:</b><br>
+Given the discrete time signal
+<br><br><code><pre>
+                n
+   x[n]  =  C α   
+</pre></code><br><br>
+where C =     3.00 and α =     2.00, find the Discrete Fourier Transform
+<br><br><code><pre>
+                           2πk
+                           ---n
+             __ N - 1       N
+   X[k]  =  \         x[n]e
+            /__ n = 0
+</pre><br><br></code>
+when n = 0 to 4.
+Define X[k] by declaring it as an array in Xk.c as shown as an example below.
+<br><br><code><pre>
+	  double complex X[] = { 1+I*1, 2+I*2, 3-I*4, 0, 0};
+</pre></code><br>
+</p>
+</body>
+</html>

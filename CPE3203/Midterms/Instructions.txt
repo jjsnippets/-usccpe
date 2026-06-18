@@ -1,0 +1,17 @@
+Instructions
+Close all notes and materials. Browsing the internet and using online tools is not allowed. You may use scientific calculators but graphing calculators are not allowed and this includes DESMOS or its equivalents. Deviating from these instructions will result in a 0 for the Midterm Exam and the filing of an official incident report with the University. When you are ready, follow the instructions below.   
+
+1. Download the Midterm Exam and unzip to an appropriate location.
+2. Open the directory named "MIDTERM" and navigate into the contents of  the working directory with path "MIDTERM\CPE3203\EXAM" . 
+3. Open another file explorer and navigate to "MIDTERM\w64devkit\" and click on w64devkit application which has the icon image.png. This should open a terminal. 
+4. On the terminal execute main by typing "./main" followed by enter. 
+5. Answer the prompts and wait for MIDTERM.html to be generated in the working directory. DO NOT EXIT THE PROGRAM until you finish the exam. DO NOT EXECUTE "clean.bat" unless instructed.
+6. Open MIDTERM.html and follow the instructions. 
+7. Once done, create a folder with your id-number as the folder name. 
+8. Copy the following files into the folder. You should be able to find them in the working directory.
+- exam.dat
+- xt.c
+- Xjw.c
+- Xk.c
+9. Create a zip file of the folder and upload to Question 1. Any other compression formats e.g. rar, 7z etc. will not be considered and will result 0 pts for the exam. 
+10. Delete all files and folders related to the Midterm exam from your network drive. This will be checked by the staff after the exam. If any files related to the exam is found, point deductions will be made. 

@@ -1,0 +1,5 @@
+/bin/
+*.class
+*.db
+songs/
+*.pdf

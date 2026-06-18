@@ -1,0 +1,12 @@
+* text=auto
+
+# Binary files (prevent line-ending conversion and diff issues)
+*.slx      binary
+*.mlapp    binary
+*.mat      binary
+*.fig      binary
+*.mex*     binary
+*.p        binary
+*.mltbx    binary
+*.mlappinstall binary
+*.ctf      binary

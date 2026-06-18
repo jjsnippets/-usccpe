@@ -1,0 +1,15 @@
+CPE 3202 COMPUTER ORGANIZATION AND ARCHITECTURE
+Group 2      MW 7:30AM - 10:30AM LB CEAC2 TC
+Estose, Jude Vicris; Sarcol, Joshua; Silmaro, Jame Paul Jr.      BS CpE - 3  2026/05/25
+Assessment of Special Project #1: TRACS Assembler (CO2)
+
+
+
+It is best to rename the file to something more simple and memorable, such as "tracs_assembler" 
+
+Once compiled into an executable, usage is as follows:
+     ./tracs_assembler <input.asm> [output.txt]
+Where <input.asm> is the input assembly code
+ Assuming that "tracs_assembler" is the name of the compiled executable.
+
+If output filename is omitted, the output file takes the base name of the input file.

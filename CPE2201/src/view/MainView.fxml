@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- MainView.fxml: Root container for switching between Normal and Fullscreen views. -->
+
+<?import javafx.scene.layout.StackPane?>
+
+<StackPane fx:id="rootStackPane" stylesheets="@css/base.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
+    <children>
+        <!-- NormalView: Standard windowed interface. Controlled by NormalViewController. -->
+        <fx:include fx:id="normalView" source="NormalView.fxml" />
+        <!-- FullscreenView: Immersive fullscreen interface. Controlled by FullscreenViewController. Initially hidden. -->
+        <fx:include fx:id="fullscreenView" source="FullscreenView.fxml" visible="false" />
+    </children>
+</StackPane>
